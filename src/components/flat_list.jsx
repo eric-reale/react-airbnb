@@ -4,7 +4,7 @@ import Flat from './flat.jsx';
 
 const FlatList = ({ flats }) => {
   return (
-    <div>
+    <div className="flat-list">
       {flats.map(flat => <Flat
         name={flat.name}
         key={flat.name}

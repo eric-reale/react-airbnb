@@ -8,9 +8,10 @@ class Flat extends Component {
 
   render() {
     return (
-      <div className="card" style={{ backgroundImage: `url({${this.props.image})`}}>
-      {this.props.name} {this.props.price}</div>
-      )
+      <div className="card" style={{ backgroundImage: `url(${this.props.image})` }}>
+        {this.props.name} {this.props.price}
+      </div>
+    );
   }
 }
 
