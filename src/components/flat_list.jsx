@@ -1,19 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Flat from './flat';
 
-import Flat from './flat.jsx';
+const FlatList = (props) => {
+  const renderList = () => {
+    return props.flats.map((flat, index) => {
+      return (
+        <Flat
+          flat={flat}
+          key={flat.lat}
+          selected={flat.name === props.selectedFlat.name}
+          index={index}
+          selectFlat={props.selectFlat}
+        />
+      );
+    });
+  };
 
-const FlatList = ({ flats }) => {
   return (
     <div className="flat-list">
-      {flats.map(flat => <Flat
-        name={flat.name}
-        key={flat.name}
-        price={flat.price}
-        image={flat.imageUrl}
-        price_currency={flat.priceCurrency}
-        lat={flat.lat}
-        lng={flat.lng} />)}
-    }
+      {renderList()}
     </div>
   );
 };
